@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+        <title>foto</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" type="text/css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <form method="POST"> 
+            {% csrf_token %}
+            <div class="row center-xs">
+                <div class="col-xs-3">
+                    <div class="row center-xs log"><a href='login'>Login</a></div>
+                    <div class="row center-xs log"><a href='tables'>Tabulky / Zápasy</a></div>
+                    <div class="row center-xs log"><a href='tipy'>Hra</a></div>
+                </div>
+                <div class="col-xs-9">
+                    
+                    <div class="row center-xs">
+                        <table>
+                            <tr><th>datum</th><th>čas</th><th>Skupina A</th><th>tipy (1-0-2)</th><th>Skupina B</th><th>tipy (1-0-2)</th></tr>
+                                {% for i in zapasy %}
+                                    <tr><td>{{i.1}}</td><td>{{i.2}}</td><td>{{i.3}} - {{i.4}}</td><td><input name="tipa{{i.0}}" type="number" min="0" max="2"></td><td>{{i.5}} - {{i.6}}</td><td><input name="tipb{{i.0}}" type="number" min="0" max="2"></td></tr>
+                                {% endfor %}
+                                <input type="submit">
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+        </form>
+    
+            <div class="row center-xs">
+                <div style="padding-left: 45%;">
+                    © JZid, 2021
+                </div>
+            </div>
+        
+    </body>
+
+</html>
+
+

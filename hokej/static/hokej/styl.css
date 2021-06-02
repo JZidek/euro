@@ -1,0 +1,154 @@
+
+table{
+    border: 2px solid rgb(54, 54, 54);
+}
+#menu{
+    background-color: #62a4cf;
+    box-shadow: 2px 0px 2px #646464 ;
+}
+#login{
+    width: 140px;
+    min-height: 300px;
+    margin: 10% 0% ;
+    padding: 20px 0px;
+    border-radius: 2%;
+    border: 2px solid rgb(34, 59, 99);
+    box-shadow: 2px 2px 2px #646464 ;
+}
+#login td{
+    padding: 10px 5px;
+}
+#login th{
+    padding: 10px 5px;
+    font-size: 150%;
+}
+.log{
+    width: 70%;
+}
+.smer{
+    background-color: #62a4cf; /* Green */
+    border: 2px solid rgb(15, 31, 56);
+    border-radius: 4%;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+}
+.smer:hover {
+    background-color: #62a4cf; /* Green */
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+.row_login{
+    padding: 10%  0%;
+}
+#plocha{
+    background-color: #d5eeff ;
+}
+.zapasy_tab{
+    font-size: 120%;
+    border: 2px solid #62a4cf;
+    box-shadow: 2px 2px 2px #646464 ;
+    margin: 4% 0%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.zapasy_tab tr:nth-child(even) {
+    background-color: #93c3e4;
+  }
+  .zapasy_tab tr:nth-child(odd) {
+    background-color: #62a4cf;
+  }
+.zapasy_tab td{
+    padding: 2px 5px;
+}
+.vyrazovak_tab{
+    font-size: 120%;
+    border: 2px solid #62a4cf;
+    box-shadow: 2px 2px 2px #646464 ;
+    margin: 4% 0%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 600px;
+}
+.vyrazovak_tab td{
+    border: 2px solid #62a4cf;
+}
+.row{
+    text-align: center;
+}
+
+.vysledky_tab{
+    width: 500px;
+    font-size: 120%;
+    border: 2px solid #62a4cf;
+    box-shadow: 2px 2px 2px #646464 ;
+    margin: 4% 0%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.vysledky_tab tr:nth-child(2){
+    background-color: #e6be10;
+  }
+  .vysledky_tab tr:nth-child(3) {
+    background-color: #dadada;
+  }
+  .vysledky_tab tr:nth-child(4) {
+    background-color: #b94a00;
+  }
+  .vysledky_tab tr {
+    background-color: #4f94bd;
+  }
+.vysledky_tab td{
+    padding: 2px 5px;
+}
+#submit{
+    margin: 30px 0px;
+    width: 200px;
+    height: 50px; 
+}
+#reklama{
+    background-color: #62a4cf;
+}
+#pata{
+    background-color: #62a4cf;
+    color: rgb(19, 19, 19);
+    height: 50px;
+}
+
+/* zapasy_vyraz.html */
+
+.columnf1 {
+    float: left;
+    width: 18%;
+    padding: 7% 3%;
+  }
+  
+.columnf2 {
+    float: left;
+    width: 18%;
+    padding: 4% 15%;
+}
+.columnf3 {
+    float: left;
+    width: 18%;
+    padding: 3% 40%;
+}
+ /* Remove extra left and right margins, due to padding in columns */
+  .rowf {margin: 0 -5px;}
+  
+  /* Clear floats after the columns */
+  .rowf:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Style the counter cards */
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+    padding: 16px;
+    text-align: center;
+    background-color: #f1f1f1;
+  }

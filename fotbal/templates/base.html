@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+    <head>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FOTBAL EURO 2021</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'fotbal/styl.css' %}" >
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" type="text/css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        
+    </head>
+
+    <body>
+        {% csrf_token %}
+        <form method="POST"> 
+            {% csrf_token %}
+            <div class="row center-xs">
+                <div  id="menu">
+                    <div class="row_login center-xs">
+                        <table id="login">
+                            <tr>
+                                <th colspan="3">{% if log %}{{userData.0}}{% endif %}</th>
+                            </tr>
+                            <tr>
+                                <td>ID :</td>
+                                <td colspan="2"><input class="log" type="text" name="user" value={{userData.0}}></td>
+                            </tr>
+                            <tr>
+                                <td>Heslo :</td>
+                                <td colspan="2"><input class="log" type="password" name="pass" value={{userData.1}}></td>
+                            </tr>
+                            <tr>
+                                {% csrf_token %}<td><input  name="prihlaseni" type="submit" value="login"></td>
+                                {% csrf_token %}<td><input  name="odhlaseni" type="submit" value="logout"></td>
+                                {% csrf_token %}<td><input  name="registrace" type="submit" value="register"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="3"><p style="overflow: auto;" >{{msg}}</p></td>
+                            </tr>
+                            <tr>
+                                {% if admin %}<td colspan="3"><input  name="update" type="submit" value="update"></td>{% endif %}
+                            </tr>
+                        </table>
+
+                    <input class="smer" name="tabulky" type="submit" value="Tabulky">
+                    <input class="smer" name="zapasy" type="submit" value="Skupina">
+                    <input class="smer" name="vyrazovak" type="submit" value="Vyřazování" {% if not log %}style="visibility: hidden;"{% endif %}>
+                    <input class="smer" name="poradi" type="submit" value="Pořadí" {% if not log %}style="visibility: hidden;"{% endif %}>
+                    </div>
+
+                </div>
+                    
+                <div id="plocha">
+
+                    {% block content %}
+
+                    {% endblock %}
+                </div>
+                  
+                <div id="reklama">   
+                    <div><p>VÍTEJTE NA MÉM WEBU</p>
+                        <p>Pokud jste tady poprvé, vyplňte prosím ID a heslo a stiskněte tlačítko "register".
+                         Tyto data nebudou poskytována třetím stranám, slouží pouze pro založení tipovacího účtu, 
+                         aby jste mohli tipovat správné výsledky a soutěžit s ostatními uživateli o nejlepšího tipera - 
+                        ten nic nevyhraje, ani nedostane pochvalu.</p>
+                        <p>Po registraci a přihlášení k účtu se vám u každého zápasu objeví kolonky pro zápis skóre. Pokud se již zápas odehrál, do kolonky již nebude možno zapisovat.
+                            Po vyplnění všech tipů stiskněte tlačítko "POTVRĎ" pod tabulkou se zápasy, čímž se vaše tipy uloží do databáze, aby jste je mohli později opět zobrazit, případně změnit.
+                        </p>
+                        <p>Vaše tipy se budou automaticky vyhodnocovat a dle úspěšnosti se budete posouvat v tabulce pořadí nahoru nebo dolů.</p>
+                        <P>PRAVIDLA</P>
+                        <p>Správné skóre = 3 body</p>
+                        <p>Správný výsledek = 1 bod</p>
+                        <p>Tento web je pouze pracovní verze, kterou se zabývám ve svém volném čase, proto se rovnou zříkám všech případných chyb a bugů. Zároveň se hlásím ke všem pozitivním ohlasům.</p>
+                    </div> 
+                    <div>
+                        <input type="text" name="koment">
+                        <input type="submit" name="kom">
+                    </div>              
+                </div>
+            </div>
+            <div class="row center-xs" id="pata">
+                <div>© JZid, 2021</div>
+            </div>
+        </form>
+
+           
+        
+        
+    </body>
+
+</html>
+
+

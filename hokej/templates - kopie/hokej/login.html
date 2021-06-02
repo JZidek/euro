@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+    <head>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+        <title>HOKEJ EURO 2021</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'hokej/styl.css' %}" >
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" type="text/css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        
+    </head>
+
+    <body>
+        <form method="POST"> 
+            {% csrf_token %}
+            <div class="row center-xs">
+                <div class="col-xs-2" id="menu">
+                    <div class="row_login center-xs">
+                        <table id="login">
+                            <tr>
+                                <th colspan="3">{{userData.0}}</th>
+                            </tr>
+                            <tr>
+                                <td>ID :</td>
+                                <td colspan="2"><input class="log" type="text" name="user" value={{userData.0}}></td>
+                            </tr>
+                            <tr>
+                                <td>Heslo :</td>
+                                <td colspan="2"><input class="log" type="password" name="pass" value={{userData.1}}></td>
+                            </tr>
+                            <tr>
+                                <td><input class="log" name="prihlaseni" type="submit" value="login"></td>
+                                <td><input class="log" name="odhlaseni" type="submit" value="logout"></td>
+                                <td><input class="log" name="registrace" type="submit" value="register"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="3"><p style="overflow: auto;" >{{msg}}</p></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="row_login center-xs log"><a href='tables'>Zápasy</a></div>
+                    <div class="row_login center-xs log"><a>Hra - výsledky</a></div>
+                </div>
+                    
+                <div class="col-xs-8" id="plocha">
+                    <div class="row center-xs">
+                        <table class="zapasy_tab">
+                            <tr><th>Datum</th><th>čas</th><th>skupina</th><th colspan="3">zápas</th><th colspan="4">výsledek</th>{% if log %}<th>tip</th>{% endif %}</tr>
+                            {% for i in data %}
+                                <tr>
+                                    <td>{{i.0}}</td><td>{{i.1}}</td><td>{{i.2}}</td><td>{{i.3}}</td><td>-</td><td>{{i.4}}</td>
+                                    {% if i.5 != 100 %}<td>{{i.5}}</td><td> : </td><td>{{i.6}}</td><td>({{i.7}})</td>{% else %}<td></td><td></td><td></td><td></td>{% endif %}
+                                    {% if log %}{% if not i.9 %}<td><input name="tip.{{i.10}}" style="width: 30px;"  readonly max="2" min="0" type="number" value="{{i.8}}"></td>{% else %}
+                                    <td><input name="tip.{{i.10}}" style="width: 30px;"  max="2" min="0" type="number" value="{{i.8}}"></td>{% endif %}{% endif %}
+                                </tr>
+                            {% endfor %}
+                            {% if log %}
+                                <tr><td colspan="11"><input class="log" name="tipy_zapis" type="submit" value="POTVRĎ"></tr>
+                            {% endif %}
+                        </table> 
+                    </div>
+                </div>
+                  
+                <div class="col-xs-2" id="reklama">                  
+                </div>
+            </div>
+            <div class="row center-xs" id="pata">
+                <div>© JZid, 2021</div>
+            </div>
+        </form>
+
+           
+        
+        
+    </body>
+
+</html>

@@ -1,0 +1,118 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+        <title>foto</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" type="text/css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <form method="POST"> 
+            {% csrf_token %}
+            <div class="row center-xs">
+                <div class="col-xs-3">
+                    <div class="row center-xs log"><a href='login'>Login</a></div>
+                    <div class="row center-xs log"><a href='tables'>Tabulky / Zápasy</a></div>
+                    <div class="row center-xs log"><a>Hra</a></div>
+                </div>
+                <div class="col-xs-9">
+                    <div class="row center-xs">
+                        <div id="tabA" class="col-xs-6">
+                            <table>
+                                <tr>
+                                    <th>Skupina A</th>
+                                </tr>
+                                <tr>
+                                    <th>Pořadí</th><th>Tým</th><th>Z</th><th>V</th><th>P</th><th>Skóre</th><th>Body</th>        
+                                </tr>
+                                <tr>
+                                    <td>1</td><td>{{a1.1}}</td><td>{{a1.2}}</td><td>{{a1.3}}</td><td>{{a1.4}}</td><td>{{a1.5}}</td><td>{{a1.6}}</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td><td>{{a2.1}}</td><td>{{a2.2}}</td><td>{{a2.3}}</td><td>{{a2.4}}</td><td>{{a2.5}}</td><td>{{a2.6}}</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td><td>{{a3.1}}</td><td>{{a3.2}}</td><td>{{a3.3}}</td><td>{{a3.4}}</td><td>{{a3.5}}</td><td>{{a3.6}}</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td><td>{{a4.1}}</td><td>{{a4.2}}</td><td>{{a4.3}}</td><td>{{a4.4}}</td><td>{{a4.5}}</td><td>{{a4.6}}</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td><td>{{a5.1}}</td><td>{{a5.2}}</td><td>{{a5.3}}</td><td>{{a5.4}}</td><td>{{a5.5}}</td><td>{{a5.6}}</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td><td>{{a6.1}}</td><td>{{a6.2}}</td><td>{{a6.3}}</td><td>{{a6.4}}</td><td>{{a6.5}}</td><td>{{a6.6}}</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td><td>{{a7.1}}</td><td>{{a7.2}}</td><td>{{a7.3}}</td><td>{{a7.4}}</td><td>{{a7.5}}</td><td>{{a7.6}}</td>
+                                </tr>
+                                <tr>
+                                    <td>8</td><td>{{a8.1}}</td><td>{{a8.2}}</td><td>{{a8.3}}</td><td>{{a8.4}}</td><td>{{a8.5}}</td><td>{{a8.6}}</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div id="tabA" class="col-xs-6">
+                            <table>
+                                <tr>
+                                    <th>Skupina B</th>
+                                </tr>
+                                <tr>
+                                    <th>Pořadí</th><th>Tým</th><th>Z</th><th>V</th><th>P</th><th>Skóre</th><th>Body</th>        
+                                </tr>
+                                <tr>
+                                    <td>1</td><td>{{b1.1}}</td><td>{{b1.2}}</td><td>{{b1.3}}</td><td>{{b1.4}}</td><td>{{b1.5}}</td><td>{{b1.6}}</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td><td>{{b2.1}}</td><td>{{b2.2}}</td><td>{{b2.3}}</td><td>{{b2.4}}</td><td>{{b2.5}}</td><td>{{b2.6}}</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td><td>{{b3.1}}</td><td>{{b3.2}}</td><td>{{b3.3}}</td><td>{{b3.4}}</td><td>{{b3.5}}</td><td>{{b3.6}}</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td><td>{{b4.1}}</td><td>{{b4.2}}</td><td>{{b4.3}}</td><td>{{b4.4}}</td><td>{{b4.5}}</td><td>{{b4.6}}</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td><td>{{b5.1}}</td><td>{{b5.2}}</td><td>{{b5.3}}</td><td>{{b5.4}}</td><td>{{b5.5}}</td><td>{{b5.6}}</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td><td>{{b6.1}}</td><td>{{b6.2}}</td><td>{{b6.3}}</td><td>{{b6.4}}</td><td>{{b6.5}}</td><td>{{b6.6}}</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td><td>{{b7.1}}</td><td>{{b7.2}}</td><td>{{b7.3}}</td><td>{{b7.4}}</td><td>{{b7.5}}</td><td>{{b7.6}}</td>
+                                </tr>
+                                <tr>
+                                    <td>8</td><td>{{b8.1}}</td><td>{{b8.2}}</td><td>{{b8.3}}</td><td>{{b8.4}}</td><td>{{b8.5}}</td><td>{{b8.6}}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row center-xs">
+                        <table>
+                            <tr><th>čas</th><th>Skupina A</th><th>Skupina B</th></tr>
+                            <tr><td></td><td>Rusko-Česko</td><td>Německo-Itálie</td></tr>
+                            <tr><td></td><td>Rusko-Česko</td><td>Německo-Itálie</td></tr>
+                            <tr><td></td><td>Rusko-Česko</td><td>Německo-Itálie</td></tr>
+                            <tr><td></td><td>Rusko-Česko</td><td>Německo-Itálie</td></tr>
+                            <tr><td></td><td>Rusko-Česko</td><td>Německo-Itálie</td></tr>
+                            <tr><td></td><td>Rusko-Česko</td><td>Německo-Itálie</td></tr>
+                            <tr><td></td><td>Rusko-Česko</td><td>Německo-Itálie</td></tr>
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+        </form>
+    
+            <div class="row center-xs">
+                <div style="padding-left: 45%;">
+                    © JZid, 2021
+                </div>
+            </div>
+        
+    </body>
+
+</html>
+
+

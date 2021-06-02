@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+        <title>foto</title>
+        <link rel="stylesheet" href="{% static 'foto/styl.css' %}" type="text/css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" type="text/css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <form method="POST"> 
+            {% csrf_token %}
+            <header class="row-xs-center">
+                <div class="col-xs-2 log">ID :     <input class="log" type="text" name="id" value={{request.POST.id}}></div>
+                <div class="col-xs-2 log">Heslo :  <input class="log" type="password" name="heslo" value={{request.POST.heslo}}></div>
+                <div><input class="log" type="submit"></div>
+                <div>{{msg}}</div>
+            </header>
+        </form>
+            <article>
+            {% block content %}
+
+            {% endblock %}
+            </article>
+            <div class="footer">
+                <div style="padding-left: 45%;">
+                    © JZid, 2021
+                </div>
+            </div>
+        
+    </body>
+
+</html>
+
+

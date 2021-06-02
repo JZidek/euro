@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+    <head>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+        <title>HOKEJ EURO 2021</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'hokej/styl.css' %}" >
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" type="text/css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        
+    </head>
+
+    <body>
+        <form method="POST"> 
+            {% csrf_token %}
+            <div class="row center-xs">
+                <div class="col-xs-2" id="menu">
+                    <div class="row_login center-xs">
+                        <table id="login">
+                            <tr>
+                                <th colspan="3">{% if log %}{{userData.0}}{% endif %}</th>
+                            </tr>
+                            <tr>
+                                <td>ID :</td>
+                                <td colspan="2"><input class="log" type="text" name="user" value={{userData.0}}></td>
+                            </tr>
+                            <tr>
+                                <td>Heslo :</td>
+                                <td colspan="2"><input class="log" type="password" name="pass" value={{userData.1}}></td>
+                            </tr>
+                            <tr>
+                                <td><input  name="prihlaseni" type="submit" value="login"></td>
+                                <td><input  name="odhlaseni" type="submit" value="logout"></td>
+                                <td><input  name="registrace" type="submit" value="register"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="3"><p style="overflow: auto;" >{{msg}}</p></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="row_login center-xs"><input class="smer" name="" type="submit" value="Zápasy"></div>
+                    <div class="row_login center-xs"><input class="smer" name="vyrazovak" type="submit" value="Vyřazovací Část" {% if not log %}style="visibility: hidden;"{% endif %}></div>
+                    <div class="row_login center-xs"><input class="smer" name="tabulky" type="submit" value="Pořadí" {% if not log %}style="visibility: hidden;"{% endif %}></div>
+                </div>
+                    
+                <div class="col-xs-8" id="plocha">
+
+                    {% block content %}
+
+                    {% endblock %}
+                </div>
+                  
+                <div class="col-xs-2" id="reklama">                  
+                </div>
+            </div>
+            <div class="row center-xs" id="pata">
+                <div>© JZid, 2021</div>
+            </div>
+        </form>
+
+           
+        
+        
+    </body>
+
+</html>
+
+

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+{% load staticfiles %}
+{% csrf_token %}
+    <div class="rowf center-xs">
+        <div class="columnf1"><div class="card"><div class="row center-xs">{{hra.0.0}} : - </div><div class="row center-xs">{{hra.0.1}} : - </div></div></div>
+        <div class="columnf1"><div class="card"><div class="row center-xs">{{hra.1.0}} : - </div><div class="row center-xs">{{hra.1.1}} : - </div></div></div>
+        <div class="columnf1"><div class="card"><div class="row center-xs">{{hra.2.0}} : - </div><div class="row center-xs">{{hra.2.1}} : - </div></div></div>
+        <div class="columnf1"><div class="card"><div class="row center-xs">{{hra.3.0}} : - </div><div class="row center-xs">{{hra.3.1}} : - </div></div></div>
+        <div class="columnf1"><div class="card"><div class="row center-xs">{{hra.4.0}} : - </div><div class="row center-xs">{{hra.4.1}} : - </div></div></div>
+        <div class="columnf1"><div class="card"><div class="row center-xs">{{hra.5.0}} : - </div><div class="row center-xs">{{hra.5.1}} : - </div></div></div>
+        <div class="columnf1"><div class="card"><div class="row center-xs">{{hra.6.0}} : - </div><div class="row center-xs">{{hra.6.1}} : - </div></div></div>
+        <div class="columnf1"><div class="card"><div class="row center-xs">{{hra.7.0}} : - </div><div class="row center-xs">{{hra.7.1}} : - </div></div></div>
+    </div>
+    <div class="rowf center-xs">
+        <div class="columnf2"><div class="card">...</div></div>
+        <div class="columnf2"><div class="card">...</div></div>
+        <div class="columnf2"><div class="card">...</div></div>
+        <div class="columnf2"><div class="card">...</div></div>
+    </div>
+    <div class="rowf center-xs">
+        <div class="columnf3"><div class="card">...</div></div>  
+        <div class="columnf3"><div class="card">...</div></div>      
+    </div>
+    <div class="rowf center-xs">
+        <div class="columnf4"><div class="card">...</div></div>       
+    </div>
+    <div class="rowf center-xs">
+        
+    </div>
+    <div class="row center-xs">
+        
+    </div>
+{% endblock %}
+                
+
+

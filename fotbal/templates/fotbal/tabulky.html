@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+{% csrf_token %}
+<div id="tabA" class="row center-xs">
+    <table class="tymy_tab">
+        <tr>
+            <th>A</th><th>Tým</th><th>Z</th><th>V</th><th>R</th><th>P</th><th>G+</th><th>G-</th><th>B</th>        
+        </tr>
+        {% for i in tymyA %}
+        <tr>
+            <td></td><td>{{i.2}}</td><td>{{i.3}}</td><td>{{i.4}}</td><td>{{i.5}}</td><td>{{i.6}}</td><td>{{i.7}}</td><td>{{i.8}}</td><td>{{i.0}}</td>        
+        </tr>
+        {% endfor %}
+        
+    </table>
+
+    <table class="tymy_tab">
+        <tr>
+            <th>B</th><th>Tým</th><th>Z</th><th>V</th><th>R</th><th>P</th><th>G+</th><th>G-</th><th>B</th>        
+        </tr>
+        {% for i in tymyB %}
+        <tr>
+            <td></td><td>{{i.2}}</td><td>{{i.3}}</td><td>{{i.4}}</td><td>{{i.5}}</td><td>{{i.6}}</td><td>{{i.7}}</td><td>{{i.8}}</td><td>{{i.0}}</td>        
+        </tr>
+        {% endfor %}
+        
+    </table>
+</div>
+
+<div id="tabA" class="row center-xs">
+    <table class="tymy_tab">
+        <tr>
+            <th>C</th><th>Tým</th><th>Z</th><th>V</th><th>R</th><th>P</th><th>G+</th><th>G-</th><th>B</th>        
+        </tr>
+        {% for i in tymyC %}
+        <tr>
+            <td></td><td>{{i.2}}</td><td>{{i.3}}</td><td>{{i.4}}</td><td>{{i.5}}</td><td>{{i.6}}</td><td>{{i.7}}</td><td>{{i.8}}</td><td>{{i.0}}</td>        
+        </tr>
+        {% endfor %}
+        
+    </table>
+
+    <table class="tymy_tab">
+        <tr>
+            <th>D</th><th>Tým</th><th>Z</th><th>V</th><th>R</th><th>P</th><th>G+</th><th>G-</th><th>B</th>        
+        </tr>
+        {% for i in tymyD %}
+        <tr>
+            <td></td><td>{{i.2}}</td><td>{{i.3}}</td><td>{{i.4}}</td><td>{{i.5}}</td><td>{{i.6}}</td><td>{{i.7}}</td><td>{{i.8}}</td><td>{{i.0}}</td>        
+        </tr>
+        {% endfor %}
+        
+    </table>
+</div>
+
+<div id="tabA" class="row center-xs">
+    <table class="tymy_tab">
+        <tr>
+            <th>E</th><th>Tým</th><th>Z</th><th>V</th><th>R</th><th>P</th><th>G+</th><th>G-</th><th>B</th>        
+        </tr>
+        {% for i in tymyE %}
+        <tr>
+            <td></td><td>{{i.2}}</td><td>{{i.3}}</td><td>{{i.4}}</td><td>{{i.5}}</td><td>{{i.6}}</td><td>{{i.7}}</td><td>{{i.8}}</td><td>{{i.0}}</td>        
+        </tr>
+        {% endfor %}
+        
+    </table>
+
+    <table class="tymy_tab">
+        <tr>
+            <th>F</th><th>Tým</th><th>Z</th><th>V</th><th>R</th><th>P</th><th>G+</th><th>G-</th><th>B</th>        
+        </tr>
+        {% for i in tymyF %}
+        <tr>
+            <td></td><td>{{i.2}}</td><td>{{i.3}}</td><td>{{i.4}}</td><td>{{i.5}}</td><td>{{i.6}}</td><td>{{i.7}}</td><td>{{i.8}}</td><td>{{i.0}}</td>        
+        </tr>
+        {% endfor %}
+        
+    </table>
+</div>
+
+{% endblock %}
